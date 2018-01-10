@@ -31,8 +31,8 @@ wget --no-check-certificate -O - https://debian.neo4j.org/neotechnology.gpg.key 
 echo 'deb http://debian.neo4j.org/repo stable/' | sudo tee /etc/apt/sources.list.d/neo4j.list
 sudo apt update
 sudo apt install -y neo4j
-sudo rm /var/lib/neo4j/data/dbms/auth
 sudo service neo4j restart
+sudo rm /var/lib/neo4j/data/dbms/auth
 curl -H "Content-Type: application/json" -X POST -d '{"password":"password"}' -u neo4j:neo4j http://localhost:7474/user/neo4j/password
 ## todo
 ## perhaps remove mysql?
